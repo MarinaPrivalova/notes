@@ -6,6 +6,7 @@
   min-width: 320px;
   height: 100vh;
   background: url(../images/backrgound.jpg) center;
+  background-size: cover;
   display: flex;
   margin: 0 auto;
   align-items: center;
@@ -15,8 +16,8 @@
 
 .notes {
   display: grid;
-  width: 90%;
-  grid-template-columns: repeat(auto-fit, 100px);
+  width: 95%;
+  grid-template-columns: repeat(auto-fit, 125px);
   gap: 30px;
   justify-content: center;
   text-align: center;
@@ -29,6 +30,7 @@
   background: rgba(0,0,0,0.4);
   transition: all 0.07s;
   text-transform: uppercase;
+  padding: 10px 0;
 }
 
 .playing {
