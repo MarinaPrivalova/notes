@@ -1,19 +1,19 @@
-const keys = document.querySelectorAll('.notes__key');
+const keys = document.querySelectorAll(".notes__key");
 
 function playSound(e) {
   const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
   const key = document.querySelector(`.notes__key[data-key="${e.keyCode}"]`);
-  if(!audio) return; /**остановить функцию*/
+  if (!audio) return; /**остановить функцию*/
   audio.currentTime = 0; /**перемотать к началу*/
   audio.play();
-  key.classList.add('playing');
+  key.classList.add("playing");
 }
 
 function removeTransition(e) {
-  if(e.propertyName !== 'transform') return; /**пропустить, если не transform*/
-  this.classList.remove('playing');
+  if (e.propertyName !== "transform") return; /**пропустить, если не transform*/
+  this.classList.remove("playing");
 }
 
-keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+keys.forEach((key) => key.addEventListener("transitionend", removeTransition));
 
-window.addEventListener('keydown', playSound);
+window.addEventListener("keydown", playSound);
